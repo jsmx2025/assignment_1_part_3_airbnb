@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_one    :booking,
+             :dependent => :destroy
+
   has_many   :requests,
              :dependent => :destroy
 
