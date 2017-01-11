@@ -29,7 +29,7 @@
         <td><%= g_tag_rating.check_in %></td>
         <td><%= g_tag_rating.value %></td>
         <td><%= g_tag_rating.rating.created_at %></td>
-        <td><%= g_tag_rating.host_id %></td>
+        <td><%= g_tag_rating.host.user_host_id %></td>
         <td>
           <a href="/g_tag_ratings/<%= g_tag_rating.id %>" class="btn btn-primary">Show</a>
           <a href="/g_tag_ratings/<%= g_tag_rating.id %>/edit" class="btn btn-warning">Edit</a>
