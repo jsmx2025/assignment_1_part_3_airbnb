@@ -47,8 +47,6 @@ class HostprofilesController < ApplicationController
   def update
     @hostprofile = Hostprofile.find(params[:id])
 
-    @hostprofile.user_host_id = params[:user_host_id]
-
     save_status = @hostprofile.save
 
     if save_status == true
