@@ -18,7 +18,7 @@
 
       <% @messages.each do |message| %>
       <tr>
-        <td><%= message.listing_id %></td>
+        <td><%= message.listing.title %></td>
         <td><%= message.guest_id %></td>
         <td><%= message.content %></td>
         <td><%= message.host_id %></td>
