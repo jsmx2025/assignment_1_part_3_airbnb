@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_many   :requests,
+             :dependent => :destroy
+
   has_many   :messages,
              :dependent => :nullify
 
