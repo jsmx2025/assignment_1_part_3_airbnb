@@ -87,7 +87,7 @@
           Host
         </label>
 
-        <input type="text" id="host_id" name="host_id" placeholder="Host" class="form-control" value="<%= @g_tag_rating.host_id %>">
+        <%= select_tag(:host_id, options_from_collection_for_select(Hostprofile.all, :id, :user_host_id, @g_tag_rating.host_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
