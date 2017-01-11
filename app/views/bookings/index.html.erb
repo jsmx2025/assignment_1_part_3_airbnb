@@ -18,7 +18,7 @@
       <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.guest.host_id %></td>
-        <td><%= booking.host_id %></td>
+        <td><%= booking.host.user_host_id %></td>
         <td><%= booking.listing_id %></td>
         <td>
           <a href="/bookings/<%= booking.id %>" class="btn btn-primary">Show</a>
