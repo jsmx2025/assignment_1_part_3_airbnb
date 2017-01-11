@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @price.errors.any? %>
+  <% @price.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Price</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_price" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for price_per_night -->
+      <div class="form-group">
+        <label for="price_per_night" class="control-label">
+          Price per night
+        </label>
+
+        <input type="text" id="price_per_night" name="price_per_night" placeholder="Price per night" class="form-control" value="<%= @price.price_per_night %>">
+      </div>
+
+      <!-- Label and input for availability_id -->
+      <div class="form-group">
+        <label for="availability_id" class="control-label">
+          Availability
+        </label>
+
+        <input type="text" id="availability_id" name="availability_id" placeholder="Availability" class="form-control" value="<%= @price.availability_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Price
+      </button>
+      or
+      <a href="/prices">Cancel</a>
+    </form>
+  </div>
+</div>
