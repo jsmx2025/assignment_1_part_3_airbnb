@@ -1,6 +1,7 @@
 class HTagRatingsController < ApplicationController
   def index
-    @h_tag_ratings = HTagRating.page(params[:page]).per(10)
+    @q = HTagRating.ransack(params[:q])
+    @h_tag_ratings = @q.result(:distinct => true).includes(:guest, :rating).page(params[:page]).per(10)
 
     render("h_tag_ratings/index.html.erb")
   end

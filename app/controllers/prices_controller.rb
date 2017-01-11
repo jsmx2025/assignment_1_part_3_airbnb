@@ -1,6 +1,7 @@
 class PricesController < ApplicationController
   def index
-    @prices = Price.page(params[:page]).per(10)
+    @q = Price.ransack(params[:q])
+    @prices = @q.result(:distinct => true).includes(:availability).page(params[:page]).per(10)
 
     render("prices/index.html.erb")
   end

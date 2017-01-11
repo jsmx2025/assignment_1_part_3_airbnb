@@ -1,6 +1,7 @@
 class GTagRatingsController < ApplicationController
   def index
-    @g_tag_ratings = GTagRating.page(params[:page]).per(10)
+    @q = GTagRating.ransack(params[:q])
+    @g_tag_ratings = @q.result(:distinct => true).includes(:host, :rating).page(params[:page]).per(10)
 
     render("g_tag_ratings/index.html.erb")
   end
