@@ -32,7 +32,13 @@
         <td><%= listing.location %></td>
         <td><%= listing.policies %></td>
         <td><%= listing.default_price_per_night %></td>
-        <td><%= listing.host.user_host_id %></td>
+        <td>
+          <% if listing.host.present? %>
+            <a href="/hostprofiles/<%= listing.host.id %>">
+              <%= listing.host.user_host_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/listings/<%= listing.id %>" class="btn btn-primary">Show</a>
           <a href="/listings/<%= listing.id %>/edit" class="btn btn-warning">Edit</a>

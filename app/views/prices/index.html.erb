@@ -17,7 +17,13 @@
       <% @prices.each do |price| %>
       <tr>
         <td><%= price.price_per_night %></td>
-        <td><%= price.availability.listing_id %></td>
+        <td>
+          <% if price.availability.present? %>
+            <a href="/availabilities/<%= price.availability.id %>">
+              <%= price.availability.listing_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/prices/<%= price.id %>" class="btn btn-primary">Show</a>
           <a href="/prices/<%= price.id %>/edit" class="btn btn-warning">Edit</a>

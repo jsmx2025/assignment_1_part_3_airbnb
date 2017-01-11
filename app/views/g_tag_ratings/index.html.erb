@@ -28,8 +28,20 @@
         <td><%= g_tag_rating.location %></td>
         <td><%= g_tag_rating.check_in %></td>
         <td><%= g_tag_rating.value %></td>
-        <td><%= g_tag_rating.rating.created_at %></td>
-        <td><%= g_tag_rating.host.user_host_id %></td>
+        <td>
+          <% if g_tag_rating.rating.present? %>
+            <a href="/ratings/<%= g_tag_rating.rating.id %>">
+              <%= g_tag_rating.rating.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if g_tag_rating.host.present? %>
+            <a href="/hostprofiles/<%= g_tag_rating.host.id %>">
+              <%= g_tag_rating.host.user_host_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/g_tag_ratings/<%= g_tag_rating.id %>" class="btn btn-primary">Show</a>
           <a href="/g_tag_ratings/<%= g_tag_rating.id %>/edit" class="btn btn-warning">Edit</a>

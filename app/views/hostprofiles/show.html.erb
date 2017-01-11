@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User host</dt>
-      <dd><%= @hostprofile.user_host_id %></dd>
+      <dd>
+        <% if @hostprofile.host.present? %>
+          <a href="/user_hosts/<%= @hostprofile.user_host_id %>">
+            <%= @hostprofile.host.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

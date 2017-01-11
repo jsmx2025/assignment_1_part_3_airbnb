@@ -22,7 +22,13 @@
       <dd><%= @listing.default_price_per_night %></dd>
 
       <dt>Host</dt>
-      <dd><%= @listing.host_id %></dd>
+      <dd>
+        <% if @listing.host.present? %>
+          <a href="/hostprofiles/<%= @listing.host_id %>">
+            <%= @listing.host.user_host_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

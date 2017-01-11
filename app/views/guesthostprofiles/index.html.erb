@@ -16,8 +16,20 @@
 
       <% @guesthostprofiles.each do |guesthostprofile| %>
       <tr>
-        <td><%= guesthostprofile.host.created_at %></td>
-        <td><%= guesthostprofile.guest.created_at %></td>
+        <td>
+          <% if guesthostprofile.host.present? %>
+            <a href="/user_hosts/<%= guesthostprofile.host.id %>">
+              <%= guesthostprofile.host.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if guesthostprofile.guest.present? %>
+            <a href="/user_guests/<%= guesthostprofile.guest.id %>">
+              <%= guesthostprofile.guest.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/guesthostprofiles/<%= guesthostprofile.id %>" class="btn btn-primary">Show</a>
           <a href="/guesthostprofiles/<%= guesthostprofile.id %>/edit" class="btn btn-warning">Edit</a>

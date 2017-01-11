@@ -9,7 +9,13 @@
       <dd><%= @price.price_per_night %></dd>
 
       <dt>Availability</dt>
-      <dd><%= @price.availability_id %></dd>
+      <dd>
+        <% if @price.availability.present? %>
+          <a href="/availabilities/<%= @price.availability_id %>">
+            <%= @price.availability.listing_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

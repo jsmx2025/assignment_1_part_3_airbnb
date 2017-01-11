@@ -16,7 +16,13 @@
 
       <% @availabilities.each do |availability| %>
       <tr>
-        <td><%= availability.listing.title %></td>
+        <td>
+          <% if availability.listing.present? %>
+            <a href="/listings/<%= availability.listing.id %>">
+              <%= availability.listing.title %>
+            </a>
+          <% end %>
+        </td>
         <td><%= availability.dates_available %></td>
         <td>
           <a href="/availabilities/<%= availability.id %>" class="btn btn-primary">Show</a>

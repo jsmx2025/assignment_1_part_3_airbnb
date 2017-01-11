@@ -9,10 +9,22 @@
       <dd><%= @h_tag_rating.overall_rating %></dd>
 
       <dt>Rating</dt>
-      <dd><%= @h_tag_rating.rating_id %></dd>
+      <dd>
+        <% if @h_tag_rating.rating.present? %>
+          <a href="/ratings/<%= @h_tag_rating.rating_id %>">
+            <%= @h_tag_rating.rating.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Guest</dt>
-      <dd><%= @h_tag_rating.guest_id %></dd>
+      <dd>
+        <% if @h_tag_rating.guest.present? %>
+          <a href="/guestprofiles/<%= @h_tag_rating.guest_id %>">
+            <%= @h_tag_rating.guest.guest_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

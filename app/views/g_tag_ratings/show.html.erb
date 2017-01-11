@@ -24,10 +24,22 @@
       <dd><%= @g_tag_rating.value %></dd>
 
       <dt>Rating</dt>
-      <dd><%= @g_tag_rating.rating_id %></dd>
+      <dd>
+        <% if @g_tag_rating.rating.present? %>
+          <a href="/ratings/<%= @g_tag_rating.rating_id %>">
+            <%= @g_tag_rating.rating.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Host</dt>
-      <dd><%= @g_tag_rating.host_id %></dd>
+      <dd>
+        <% if @g_tag_rating.host.present? %>
+          <a href="/hostprofiles/<%= @g_tag_rating.host_id %>">
+            <%= @g_tag_rating.host.user_host_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

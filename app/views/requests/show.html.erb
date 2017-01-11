@@ -9,10 +9,22 @@
       <dd><%= @request.content %></dd>
 
       <dt>Listing</dt>
-      <dd><%= @request.listing_id %></dd>
+      <dd>
+        <% if @request.listing.present? %>
+          <a href="/listings/<%= @request.listing_id %>">
+            <%= @request.listing.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Guest</dt>
-      <dd><%= @request.guest_id %></dd>
+      <dd>
+        <% if @request.guest.present? %>
+          <a href="/guestprofiles/<%= @request.guest_id %>">
+            <%= @request.guest.guest_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

@@ -30,7 +30,13 @@
       <dd><%= @listing_tag.neighborhood %></dd>
 
       <dt>Listing</dt>
-      <dd><%= @listing_tag.listing_id %></dd>
+      <dd>
+        <% if @listing_tag.listing.present? %>
+          <a href="/listings/<%= @listing_tag.listing_id %>">
+            <%= @listing_tag.listing.title %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

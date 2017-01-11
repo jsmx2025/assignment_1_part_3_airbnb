@@ -20,10 +20,34 @@
       <% @reviews.each do |review| %>
       <tr>
         <td><%= review.content %></td>
-        <td><%= review.guest.guest_id %></td>
-        <td><%= review.host.user_host_id %></td>
-        <td><%= review.booking.guest_id %></td>
-        <td><%= review.listing.title %></td>
+        <td>
+          <% if review.guest.present? %>
+            <a href="/guestprofiles/<%= review.guest.id %>">
+              <%= review.guest.guest_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.host.present? %>
+            <a href="/hostprofiles/<%= review.host.id %>">
+              <%= review.host.user_host_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.booking.present? %>
+            <a href="/bookings/<%= review.booking.id %>">
+              <%= review.booking.guest_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.listing.present? %>
+            <a href="/listings/<%= review.listing.id %>">
+              <%= review.listing.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/reviews/<%= review.id %>" class="btn btn-primary">Show</a>
           <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">Edit</a>

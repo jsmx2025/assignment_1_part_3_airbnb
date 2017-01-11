@@ -17,9 +17,27 @@
 
       <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.guest.host_id %></td>
-        <td><%= booking.host.user_host_id %></td>
-        <td><%= booking.listing.title %></td>
+        <td>
+          <% if booking.guest.present? %>
+            <a href="/guesthostprofiles/<%= booking.guest.id %>">
+              <%= booking.guest.host_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.host.present? %>
+            <a href="/hostprofiles/<%= booking.host.id %>">
+              <%= booking.host.user_host_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.listing.present? %>
+            <a href="/listings/<%= booking.listing.id %>">
+              <%= booking.listing.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/bookings/<%= booking.id %>" class="btn btn-primary">Show</a>
           <a href="/bookings/<%= booking.id %>/edit" class="btn btn-warning">Edit</a>

@@ -18,8 +18,20 @@
       <% @h_tag_ratings.each do |h_tag_rating| %>
       <tr>
         <td><%= h_tag_rating.overall_rating %></td>
-        <td><%= h_tag_rating.rating.created_at %></td>
-        <td><%= h_tag_rating.guest.guest_id %></td>
+        <td>
+          <% if h_tag_rating.rating.present? %>
+            <a href="/ratings/<%= h_tag_rating.rating.id %>">
+              <%= h_tag_rating.rating.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if h_tag_rating.guest.present? %>
+            <a href="/guestprofiles/<%= h_tag_rating.guest.id %>">
+              <%= h_tag_rating.guest.guest_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/h_tag_ratings/<%= h_tag_rating.id %>" class="btn btn-primary">Show</a>
           <a href="/h_tag_ratings/<%= h_tag_rating.id %>/edit" class="btn btn-warning">Edit</a>

@@ -9,16 +9,40 @@
       <dd><%= @review.content %></dd>
 
       <dt>Guest</dt>
-      <dd><%= @review.guest_id %></dd>
+      <dd>
+        <% if @review.guest.present? %>
+          <a href="/guestprofiles/<%= @review.guest_id %>">
+            <%= @review.guest.guest_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Host</dt>
-      <dd><%= @review.host_id %></dd>
+      <dd>
+        <% if @review.host.present? %>
+          <a href="/hostprofiles/<%= @review.host_id %>">
+            <%= @review.host.user_host_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Booking</dt>
-      <dd><%= @review.booking_id %></dd>
+      <dd>
+        <% if @review.booking.present? %>
+          <a href="/bookings/<%= @review.booking_id %>">
+            <%= @review.booking.guest_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Listing</dt>
-      <dd><%= @review.listing_id %></dd>
+      <dd>
+        <% if @review.listing.present? %>
+          <a href="/listings/<%= @review.listing_id %>">
+            <%= @review.listing.title %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
