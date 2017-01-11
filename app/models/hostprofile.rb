@@ -1,6 +1,10 @@
 class Hostprofile < ApplicationRecord
   # Direct associations
 
+  has_many   :messages,
+             :foreign_key => "host_id",
+             :dependent => :nullify
+
   belongs_to :host,
              :class_name => "UserHost",
              :foreign_key => "user_host_id"
