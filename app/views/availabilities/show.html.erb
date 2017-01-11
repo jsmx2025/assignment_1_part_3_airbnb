@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Availability #<%= @availability.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Listing</dt>
+      <dd><%= @availability.listing_id %></dd>
+
+      <dt>Dates available</dt>
+      <dd><%= @availability.dates_available %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/availabilities" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_availability/<%= @availability.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

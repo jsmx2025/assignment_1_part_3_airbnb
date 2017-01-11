@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @availability.errors.any? %>
+  <% @availability.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Availability</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_availability" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @availability.listing_id %>">
+      </div>
+
+      <!-- Label and input for dates_available -->
+      <div class="form-group">
+        <label for="dates_available" class="control-label">
+          Dates available
+        </label>
+
+        <input type="text" id="dates_available" name="dates_available" placeholder="Dates available" class="form-control" value="<%= @availability.dates_available %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Availability
+      </button>
+      or
+      <a href="/availabilities">Cancel</a>
+    </form>
+  </div>
+</div>
