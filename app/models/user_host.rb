@@ -1,6 +1,10 @@
 class UserHost < ApplicationRecord
   # Direct associations
 
+  has_one    :guesthostprofile,
+             :foreign_key => "host_id",
+             :dependent => :destroy
+
   has_one    :hostprofile,
              :dependent => :destroy
 
