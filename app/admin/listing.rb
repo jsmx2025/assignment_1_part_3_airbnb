@@ -1,5 +1,7 @@
 ActiveAdmin.register Listing do
 
+ permit_params :title, :location, :policies, :default_price_per_night, :host_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
