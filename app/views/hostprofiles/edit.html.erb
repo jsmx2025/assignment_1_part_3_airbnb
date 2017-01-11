@@ -24,7 +24,7 @@
           User host
         </label>
 
-        <input type="text" id="user_host_id" name="user_host_id" placeholder="User host" class="form-control" value="<%= @hostprofile.user_host_id %>">
+        <%= select_tag(:user_host_id, options_from_collection_for_select(UserHost.all, :id, :created_at, @hostprofile.user_host_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
