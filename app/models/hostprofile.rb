@@ -1,6 +1,10 @@
 class Hostprofile < ApplicationRecord
   # Direct associations
 
+  has_many   :listings,
+             :foreign_key => "host_id",
+             :dependent => :destroy
+
   has_many   :g_tag_ratings,
              :foreign_key => "host_id",
              :dependent => :destroy
