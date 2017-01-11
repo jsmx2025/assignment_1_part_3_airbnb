@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_many   :availabilities,
+             :dependent => :nullify
+
   has_many   :tags,
              :class_name => "ListingTag",
              :dependent => :nullify
