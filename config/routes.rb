@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :user_guests
+  # Routes for the User_guest resource:
+  # READ
+  get "/user_guests", :controller => "user_guests", :action => "index"
+  get "/user_guests/:id", :controller => "user_guests", :action => "show"
+
+
   # Routes for the Message resource:
   # CREATE
   get "/messages/new", :controller => "messages", :action => "new"
