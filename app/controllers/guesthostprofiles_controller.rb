@@ -6,6 +6,7 @@ class GuesthostprofilesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @guesthostprofile = Guesthostprofile.find(params[:id])
 
     render("guesthostprofiles/show.html.erb")

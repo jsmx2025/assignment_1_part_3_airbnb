@@ -16,6 +16,11 @@ class HostprofilesController < ApplicationController
   end
 
   def show
+    @listing = Listing.new
+    @g_tag_rating = GTagRating.new
+    @booking = Booking.new
+    @review = Review.new
+    @message = Message.new
     @hostprofile = Hostprofile.find(params[:id])
 
     render("hostprofiles/show.html.erb")

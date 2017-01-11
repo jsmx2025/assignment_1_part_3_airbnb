@@ -6,6 +6,7 @@ class RatingsController < ApplicationController
   end
 
   def show
+    @g_tag_rating = GTagRating.new
     @rating = Rating.find(params[:id])
 
     render("ratings/show.html.erb")

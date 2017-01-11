@@ -6,6 +6,11 @@ class GuestprofilesController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
+    @h_tag_rating = HTagRating.new
+    @review = Review.new
+    @request = Request.new
+    @message = Message.new
     @guestprofile = Guestprofile.find(params[:id])
 
     render("guestprofiles/show.html.erb")
