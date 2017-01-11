@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>G Tag Rating #<%= @g_tag_rating.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Accuracy</dt>
+      <dd><%= @g_tag_rating.accuracy %></dd>
+
+      <dt>Communication</dt>
+      <dd><%= @g_tag_rating.communication %></dd>
+
+      <dt>Cleanliness</dt>
+      <dd><%= @g_tag_rating.cleanliness %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @g_tag_rating.location %></dd>
+
+      <dt>Check in</dt>
+      <dd><%= @g_tag_rating.check_in %></dd>
+
+      <dt>Value</dt>
+      <dd><%= @g_tag_rating.value %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @g_tag_rating.rating_id %></dd>
+
+      <dt>Host</dt>
+      <dd><%= @g_tag_rating.host_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/g_tag_ratings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/g_tag_ratings/<%= @g_tag_rating.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_g_tag_rating/<%= @g_tag_rating.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

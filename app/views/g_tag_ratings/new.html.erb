@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @g_tag_rating.errors.any? %>
+  <% @g_tag_rating.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add G Tag Rating</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_g_tag_rating" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for accuracy -->
+      <div class="form-group">
+        <label for="accuracy" class="control-label">
+          Accuracy
+        </label>
+
+        <input type="text" id="accuracy" name="accuracy" placeholder="Accuracy" class="form-control" value="<%= @g_tag_rating.accuracy %>">
+      </div>
+
+      <!-- Label and input for communication -->
+      <div class="form-group">
+        <label for="communication" class="control-label">
+          Communication
+        </label>
+
+        <input type="text" id="communication" name="communication" placeholder="Communication" class="form-control" value="<%= @g_tag_rating.communication %>">
+      </div>
+
+      <!-- Label and input for cleanliness -->
+      <div class="form-group">
+        <label for="cleanliness" class="control-label">
+          Cleanliness
+        </label>
+
+        <input type="text" id="cleanliness" name="cleanliness" placeholder="Cleanliness" class="form-control" value="<%= @g_tag_rating.cleanliness %>">
+      </div>
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @g_tag_rating.location %>">
+      </div>
+
+      <!-- Label and input for check_in -->
+      <div class="form-group">
+        <label for="check_in" class="control-label">
+          Check in
+        </label>
+
+        <input type="text" id="check_in" name="check_in" placeholder="Check in" class="form-control" value="<%= @g_tag_rating.check_in %>">
+      </div>
+
+      <!-- Label and input for value -->
+      <div class="form-group">
+        <label for="value" class="control-label">
+          Value
+        </label>
+
+        <input type="text" id="value" name="value" placeholder="Value" class="form-control" value="<%= @g_tag_rating.value %>">
+      </div>
+
+      <!-- Label and input for rating_id -->
+      <div class="form-group">
+        <label for="rating_id" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating_id" name="rating_id" placeholder="Rating" class="form-control" value="<%= @g_tag_rating.rating_id %>">
+      </div>
+
+      <!-- Label and input for host_id -->
+      <div class="form-group">
+        <label for="host_id" class="control-label">
+          Host
+        </label>
+
+        <input type="text" id="host_id" name="host_id" placeholder="Host" class="form-control" value="<%= @g_tag_rating.host_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create G Tag Rating
+      </button>
+      or
+      <a href="/g_tag_ratings">Cancel</a>
+    </form>
+  </div>
+</div>

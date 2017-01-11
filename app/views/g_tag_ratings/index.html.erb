@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    G tag ratings
+    <a href="/g_tag_ratings/new" class="btn btn-lg btn-success">New G tag rating</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Accuracy</th>
+        <th>Communication</th>
+        <th>Cleanliness</th>
+        <th>Location</th>
+        <th>Check in</th>
+        <th>Value</th>
+        <th>Rating</th>
+        <th>Host</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @g_tag_ratings.each do |g_tag_rating| %>
+      <tr>
+        <td><%= g_tag_rating.accuracy %></td>
+        <td><%= g_tag_rating.communication %></td>
+        <td><%= g_tag_rating.cleanliness %></td>
+        <td><%= g_tag_rating.location %></td>
+        <td><%= g_tag_rating.check_in %></td>
+        <td><%= g_tag_rating.value %></td>
+        <td><%= g_tag_rating.rating_id %></td>
+        <td><%= g_tag_rating.host_id %></td>
+        <td>
+          <a href="/g_tag_ratings/<%= g_tag_rating.id %>" class="btn btn-primary">Show</a>
+          <a href="/g_tag_ratings/<%= g_tag_rating.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_g_tag_rating/<%= g_tag_rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
