@@ -1,5 +1,7 @@
 ActiveAdmin.register GTagRating do
 
+ permit_params :accuracy, :communication, :cleanliness, :location, :check_in, :value, :rating_id, :host_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
