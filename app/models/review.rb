@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_one    :rating,
+             :dependent => :destroy
+
   belongs_to :guest,
              :class_name => "Guestprofile"
 
