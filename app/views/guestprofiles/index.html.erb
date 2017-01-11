@@ -15,7 +15,7 @@
 
       <% @guestprofiles.each do |guestprofile| %>
       <tr>
-        <td><%= guestprofile.guest_id %></td>
+        <td><%= guestprofile.guest.created_at %></td>
         <td>
           <a href="/guestprofiles/<%= guestprofile.id %>" class="btn btn-primary">Show</a>
           <a href="/guestprofiles/<%= guestprofile.id %>/edit" class="btn btn-warning">Edit</a>
