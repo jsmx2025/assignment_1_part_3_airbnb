@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Hostprofiles
+    <a href="/hostprofiles/new" class="btn btn-lg btn-success">New Hostprofile</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User host</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @hostprofiles.each do |hostprofile| %>
+      <tr>
+        <td><%= hostprofile.user_host_id %></td>
+        <td>
+          <a href="/hostprofiles/<%= hostprofile.id %>" class="btn btn-primary">Show</a>
+          <a href="/hostprofiles/<%= hostprofile.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_hostprofile/<%= hostprofile.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

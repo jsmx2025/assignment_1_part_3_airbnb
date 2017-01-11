@@ -1,0 +1,79 @@
+class HostprofilesController < ApplicationController
+  def index
+    @hostprofiles = Hostprofile.all
+
+    render("hostprofiles/index.html.erb")
+  end
+
+  def show
+    @hostprofile = Hostprofile.find(params[:id])
+
+    render("hostprofiles/show.html.erb")
+  end
+
+  def new
+    @hostprofile = Hostprofile.new
+
+    render("hostprofiles/new.html.erb")
+  end
+
+  def create
+    @hostprofile = Hostprofile.new
+
+    @hostprofile.user_host_id = params[:user_host_id]
+
+    save_status = @hostprofile.save
+
+    if save_status == true
+      referer = URI(request.referer).path
+
+      case referer
+      when "/hostprofiles/new", "/create_hostprofile"
+        redirect_to("/hostprofiles")
+      else
+        redirect_back(:fallback_location => "/", :notice => "Hostprofile created successfully.")
+      end
+    else
+      render("hostprofiles/new.html.erb")
+    end
+  end
+
+  def edit
+    @hostprofile = Hostprofile.find(params[:id])
+
+    render("hostprofiles/edit.html.erb")
+  end
+
+  def update
+    @hostprofile = Hostprofile.find(params[:id])
+
+    @hostprofile.user_host_id = params[:user_host_id]
+
+    save_status = @hostprofile.save
+
+    if save_status == true
+      referer = URI(request.referer).path
+
+      case referer
+      when "/hostprofiles/#{@hostprofile.id}/edit", "/update_hostprofile"
+        redirect_to("/hostprofiles/#{@hostprofile.id}", :notice => "Hostprofile updated successfully.")
+      else
+        redirect_back(:fallback_location => "/", :notice => "Hostprofile updated successfully.")
+      end
+    else
+      render("hostprofiles/edit.html.erb")
+    end
+  end
+
+  def destroy
+    @hostprofile = Hostprofile.find(params[:id])
+
+    @hostprofile.destroy
+
+    if URI(request.referer).path == "/hostprofiles/#{@hostprofile.id}"
+      redirect_to("/", :notice => "Hostprofile deleted.")
+    else
+      redirect_back(:fallback_location => "/", :notice => "Hostprofile deleted.")
+    end
+  end
+end
