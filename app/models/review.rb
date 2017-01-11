@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :guest,
+             :class_name => "Guestprofile"
+
   belongs_to :listing
 
   belongs_to :host,

@@ -1,6 +1,10 @@
 class Guestprofile < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :foreign_key => "guest_id",
+             :dependent => :destroy
+
   has_many   :requests,
              :foreign_key => "guest_id",
              :dependent => :destroy
