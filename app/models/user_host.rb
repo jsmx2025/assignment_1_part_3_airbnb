@@ -1,6 +1,9 @@
 class UserHost < ApplicationRecord
   # Direct associations
 
+  has_one    :hostprofile,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
