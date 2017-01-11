@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Listing_tag resource:
+  # CREATE
+  get "/listing_tags/new", :controller => "listing_tags", :action => "new"
+  post "/create_listing_tag", :controller => "listing_tags", :action => "create"
+
+  # READ
+  get "/listing_tags", :controller => "listing_tags", :action => "index"
+  get "/listing_tags/:id", :controller => "listing_tags", :action => "show"
+
+  # UPDATE
+  get "/listing_tags/:id/edit", :controller => "listing_tags", :action => "edit"
+  post "/update_listing_tag/:id", :controller => "listing_tags", :action => "update"
+
+  # DELETE
+  get "/delete_listing_tag/:id", :controller => "listing_tags", :action => "destroy"
+  #------------------------------
+
   # Routes for the Listing resource:
   # CREATE
   get "/listings/new", :controller => "listings", :action => "new"

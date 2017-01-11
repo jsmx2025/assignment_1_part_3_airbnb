@@ -1,0 +1,109 @@
+<!-- Validation failure messages -->
+<% if @listing_tag.errors.any? %>
+  <% @listing_tag.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Listing Tag</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_listing_tag" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for private_room -->
+      <div class="form-group">
+        <label for="private_room" class="control-label">
+          Private room
+        </label>
+
+        <input type="text" id="private_room" name="private_room" placeholder="Private room" class="form-control" value="<%= @listing_tag.private_room %>">
+      </div>
+
+      <!-- Label and input for entire_home -->
+      <div class="form-group">
+        <label for="entire_home" class="control-label">
+          Entire home
+        </label>
+
+        <input type="text" id="entire_home" name="entire_home" placeholder="Entire home" class="form-control" value="<%= @listing_tag.entire_home %>">
+      </div>
+
+      <!-- Label and input for number_of_bedrooms -->
+      <div class="form-group">
+        <label for="number_of_bedrooms" class="control-label">
+          Number of bedrooms
+        </label>
+
+        <input type="text" id="number_of_bedrooms" name="number_of_bedrooms" placeholder="Number of bedrooms" class="form-control" value="<%= @listing_tag.number_of_bedrooms %>">
+      </div>
+
+      <!-- Label and input for number_of_bathrooms -->
+      <div class="form-group">
+        <label for="number_of_bathrooms" class="control-label">
+          Number of bathrooms
+        </label>
+
+        <input type="text" id="number_of_bathrooms" name="number_of_bathrooms" placeholder="Number of bathrooms" class="form-control" value="<%= @listing_tag.number_of_bathrooms %>">
+      </div>
+
+      <!-- Label and input for number_of_beds -->
+      <div class="form-group">
+        <label for="number_of_beds" class="control-label">
+          Number of beds
+        </label>
+
+        <input type="text" id="number_of_beds" name="number_of_beds" placeholder="Number of beds" class="form-control" value="<%= @listing_tag.number_of_beds %>">
+      </div>
+
+      <!-- Label and input for max_occupants -->
+      <div class="form-group">
+        <label for="max_occupants" class="control-label">
+          Max occupants
+        </label>
+
+        <input type="text" id="max_occupants" name="max_occupants" placeholder="Max occupants" class="form-control" value="<%= @listing_tag.max_occupants %>">
+      </div>
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @listing_tag.city %>">
+      </div>
+
+      <!-- Label and input for neighborhood -->
+      <div class="form-group">
+        <label for="neighborhood" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood" name="neighborhood" placeholder="Neighborhood" class="form-control" value="<%= @listing_tag.neighborhood %>">
+      </div>
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @listing_tag.listing_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Listing Tag
+      </button>
+      or
+      <a href="/listing_tags">Cancel</a>
+    </form>
+  </div>
+</div>

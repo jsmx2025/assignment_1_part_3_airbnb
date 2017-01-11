@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h3>Listing Tag #<%= @listing_tag.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Private room</dt>
+      <dd><%= @listing_tag.private_room %></dd>
+
+      <dt>Entire home</dt>
+      <dd><%= @listing_tag.entire_home %></dd>
+
+      <dt>Number of bedrooms</dt>
+      <dd><%= @listing_tag.number_of_bedrooms %></dd>
+
+      <dt>Number of bathrooms</dt>
+      <dd><%= @listing_tag.number_of_bathrooms %></dd>
+
+      <dt>Number of beds</dt>
+      <dd><%= @listing_tag.number_of_beds %></dd>
+
+      <dt>Max occupants</dt>
+      <dd><%= @listing_tag.max_occupants %></dd>
+
+      <dt>City</dt>
+      <dd><%= @listing_tag.city %></dd>
+
+      <dt>Neighborhood</dt>
+      <dd><%= @listing_tag.neighborhood %></dd>
+
+      <dt>Listing</dt>
+      <dd><%= @listing_tag.listing_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/listing_tags" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/listing_tags/<%= @listing_tag.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_listing_tag/<%= @listing_tag.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
