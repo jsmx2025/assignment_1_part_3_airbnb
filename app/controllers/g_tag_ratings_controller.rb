@@ -1,6 +1,6 @@
 class GTagRatingsController < ApplicationController
   def index
-    @g_tag_ratings = GTagRating.all
+    @g_tag_ratings = GTagRating.page(params[:page]).per(10)
 
     render("g_tag_ratings/index.html.erb")
   end

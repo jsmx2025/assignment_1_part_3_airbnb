@@ -10,7 +10,7 @@ class HostprofilesController < ApplicationController
   end
 
   def index
-    @hostprofiles = Hostprofile.all
+    @hostprofiles = Hostprofile.page(params[:page]).per(10)
 
     render("hostprofiles/index.html.erb")
   end

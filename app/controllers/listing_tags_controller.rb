@@ -1,6 +1,6 @@
 class ListingTagsController < ApplicationController
   def index
-    @listing_tags = ListingTag.all
+    @listing_tags = ListingTag.page(params[:page]).per(10)
 
     render("listing_tags/index.html.erb")
   end

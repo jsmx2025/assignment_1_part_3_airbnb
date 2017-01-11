@@ -1,6 +1,6 @@
 class HTagRatingsController < ApplicationController
   def index
-    @h_tag_ratings = HTagRating.all
+    @h_tag_ratings = HTagRating.page(params[:page]).per(10)
 
     render("h_tag_ratings/index.html.erb")
   end
