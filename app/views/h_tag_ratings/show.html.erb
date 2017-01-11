@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>H Tag Rating #<%= @h_tag_rating.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Overall rating</dt>
+      <dd><%= @h_tag_rating.overall_rating %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @h_tag_rating.rating_id %></dd>
+
+      <dt>Guest</dt>
+      <dd><%= @h_tag_rating.guest_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/h_tag_ratings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/h_tag_ratings/<%= @h_tag_rating.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_h_tag_rating/<%= @h_tag_rating.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

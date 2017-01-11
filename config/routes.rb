@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the H_tag_rating resource:
+  # CREATE
+  get "/h_tag_ratings/new", :controller => "h_tag_ratings", :action => "new"
+  post "/create_h_tag_rating", :controller => "h_tag_ratings", :action => "create"
+
+  # READ
+  get "/h_tag_ratings", :controller => "h_tag_ratings", :action => "index"
+  get "/h_tag_ratings/:id", :controller => "h_tag_ratings", :action => "show"
+
+  # UPDATE
+  get "/h_tag_ratings/:id/edit", :controller => "h_tag_ratings", :action => "edit"
+  post "/update_h_tag_rating/:id", :controller => "h_tag_ratings", :action => "update"
+
+  # DELETE
+  get "/delete_h_tag_rating/:id", :controller => "h_tag_ratings", :action => "destroy"
+  #------------------------------
+
   # Routes for the G_tag_rating resource:
   # CREATE
   get "/g_tag_ratings/new", :controller => "g_tag_ratings", :action => "new"

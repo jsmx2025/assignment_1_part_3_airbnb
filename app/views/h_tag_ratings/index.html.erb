@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    H tag ratings
+    <a href="/h_tag_ratings/new" class="btn btn-lg btn-success">New H tag rating</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Overall rating</th>
+        <th>Rating</th>
+        <th>Guest</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @h_tag_ratings.each do |h_tag_rating| %>
+      <tr>
+        <td><%= h_tag_rating.overall_rating %></td>
+        <td><%= h_tag_rating.rating_id %></td>
+        <td><%= h_tag_rating.guest_id %></td>
+        <td>
+          <a href="/h_tag_ratings/<%= h_tag_rating.id %>" class="btn btn-primary">Show</a>
+          <a href="/h_tag_ratings/<%= h_tag_rating.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_h_tag_rating/<%= h_tag_rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
