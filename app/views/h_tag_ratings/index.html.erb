@@ -18,7 +18,7 @@
       <% @h_tag_ratings.each do |h_tag_rating| %>
       <tr>
         <td><%= h_tag_rating.overall_rating %></td>
-        <td><%= h_tag_rating.rating_id %></td>
+        <td><%= h_tag_rating.rating.created_at %></td>
         <td><%= h_tag_rating.guest_id %></td>
         <td>
           <a href="/h_tag_ratings/<%= h_tag_rating.id %>" class="btn btn-primary">Show</a>
