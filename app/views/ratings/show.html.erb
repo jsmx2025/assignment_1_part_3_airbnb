@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Rating has many tagsratings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tagsratings
+      </li>
+
+      <% @rating.tagsratings.each do |g_tag_rating| %>
+        <li class="list-group-item">
+          <a href="/g_tag_ratings/<%= g_tag_rating.id %>">
+            <%= g_tag_rating.accuracy %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/g_tag_ratings/<%= g_tag_rating.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/g_tag_ratings/<%= g_tag_rating.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_g_tag_rating/<%= g_tag_rating.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

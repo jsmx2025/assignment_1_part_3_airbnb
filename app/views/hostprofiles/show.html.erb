@@ -23,3 +23,158 @@
     </div>
   </div>
 </div>
+
+<!-- A Hostprofile has many messages -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Messages
+      </li>
+
+      <% @hostprofile.messages.each do |message| %>
+        <li class="list-group-item">
+          <a href="/messages/<%= message.id %>">
+            <%= message.listing_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/messages/<%= message.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Hostprofile has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @hostprofile.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.content %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/reviews/<%= review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_review/<%= review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Hostprofile has many bookings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookings
+      </li>
+
+      <% @hostprofile.bookings.each do |booking| %>
+        <li class="list-group-item">
+          <a href="/bookings/<%= booking.id %>">
+            <%= booking.guest_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/bookings/<%= booking.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/bookings/<%= booking.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_booking/<%= booking.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Hostprofile has many g_tag_ratings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        G Tag Ratings
+      </li>
+
+      <% @hostprofile.g_tag_ratings.each do |g_tag_rating| %>
+        <li class="list-group-item">
+          <a href="/g_tag_ratings/<%= g_tag_rating.id %>">
+            <%= g_tag_rating.accuracy %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/g_tag_ratings/<%= g_tag_rating.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/g_tag_ratings/<%= g_tag_rating.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_g_tag_rating/<%= g_tag_rating.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Hostprofile has many listings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listings
+      </li>
+
+      <% @hostprofile.listings.each do |listing| %>
+        <li class="list-group-item">
+          <a href="/listings/<%= listing.id %>">
+            <%= listing.title %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/listings/<%= listing.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/listings/<%= listing.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_listing/<%= listing.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
