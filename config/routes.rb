@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Guestprofile resource:
+  # CREATE
+  get "/guestprofiles/new", :controller => "guestprofiles", :action => "new"
+  post "/create_guestprofile", :controller => "guestprofiles", :action => "create"
+
+  # READ
+  get "/guestprofiles", :controller => "guestprofiles", :action => "index"
+  get "/guestprofiles/:id", :controller => "guestprofiles", :action => "show"
+
+  # UPDATE
+  get "/guestprofiles/:id/edit", :controller => "guestprofiles", :action => "edit"
+  post "/update_guestprofile/:id", :controller => "guestprofiles", :action => "update"
+
+  # DELETE
+  get "/delete_guestprofile/:id", :controller => "guestprofiles", :action => "destroy"
+  #------------------------------
+
   devise_for :user_guests
   # Routes for the User_guest resource:
   # READ
