@@ -33,7 +33,7 @@
           User guest
         </label>
 
-        <input type="text" id="user_guest_id" name="user_guest_id" placeholder="User guest" class="form-control" value="<%= @guesthostprofile.user_guest_id %>">
+        <%= select_tag(:user_guest_id, options_from_collection_for_select(UserGuest.all, :id, :created_at, @guesthostprofile.user_guest_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
