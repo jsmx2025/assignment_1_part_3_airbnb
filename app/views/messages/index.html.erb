@@ -21,7 +21,7 @@
         <td><%= message.listing.title %></td>
         <td><%= message.guest.guest_id %></td>
         <td><%= message.content %></td>
-        <td><%= message.host_id %></td>
+        <td><%= message.host.user_host_id %></td>
         <td>
           <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
           <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
