@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Listing #<%= @listing.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd><%= @listing.title %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @listing.location %></dd>
+
+      <dt>Policies</dt>
+      <dd><%= @listing.policies %></dd>
+
+      <dt>Default price per night</dt>
+      <dd><%= @listing.default_price_per_night %></dd>
+
+      <dt>Host</dt>
+      <dd><%= @listing.host_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/listings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/listings/<%= @listing.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_listing/<%= @listing.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
