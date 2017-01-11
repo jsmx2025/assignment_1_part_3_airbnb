@@ -1,6 +1,9 @@
 class UserGuest < ApplicationRecord
   # Direct associations
 
+  has_one    :guesthostprofile,
+             :dependent => :destroy
+
   has_one    :guestprofile,
              :foreign_key => "guest_id",
              :dependent => :destroy
