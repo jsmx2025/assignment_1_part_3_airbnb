@@ -1,6 +1,10 @@
 class Hostprofile < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :foreign_key => "host_id",
+             :dependent => :destroy
+
   has_many   :messages,
              :foreign_key => "host_id",
              :dependent => :nullify
